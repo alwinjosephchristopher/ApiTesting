@@ -1,0 +1,35 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "array",
+	"title": "The Comments Collection schema",
+	"description": "Contains comments Collection endpoint json schema",
+	"items": {
+		"type": "object",
+		"title": "The Comments schema",
+		"description": "Contains comments endpoint json schema",
+		"properties": {
+			"postId": {
+				"type": "integer"
+			},
+			"id": {
+				"type": "integer"
+			},
+			"name": {
+				"type": "string"
+			},
+			"body": {
+				"type": "string"
+			},
+			"email": {
+				"type": "string"
+			}
+		},
+		"required": [
+			"postId",
+			"id",
+			"name",
+			"email",
+			"body"
+		]
+	}
+}

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
+<script type="text/javascript" src="js/Chart.min.js"></script>
+<script type="text/javascript" src="js/moment.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+  
+<title>Cucumber Reports  - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+                <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
+                <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+    
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+            <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>API Testing Assignment</td>
+            <td>30 Jul 2022, 15:38</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+      </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Steps Statistics</h2>
+          <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+      </div>
+</div>
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table id="tablesorter" class="stats-table table-hover">
+
+        <thead>
+          <tr class="header">
+            <th>Implementation</th>
+            <th>Occurrences</th>
+            <th>Duration</th>
+            <th>Average</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+                      <tr>
+              <td class="location">hooks.Hooks.afterScenarioFinish()</td>
+              <td>168</td>
+              <td class="duration" data-value="7797200">007ms</td>
+              <td class="duration" data-value="46411">000ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">hooks.Hooks.beforeScenarioStart()</td>
+              <td>168</td>
+              <td class="duration" data-value="14698200">014ms</td>
+              <td class="duration" data-value="87489">000ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">stepDefinitions.CommentsSD.setCommentRequstBody(java.lang.String)</td>
+              <td>27</td>
+              <td class="duration" data-value="272585100">272ms</td>
+              <td class="duration" data-value="10095744">010ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">stepDefinitions.CommentsSD.verifyResponseSearchResult(java.lang.String)</td>
+              <td>10</td>
+              <td class="duration" data-value="39017800">039ms</td>
+              <td class="duration" data-value="3901780">003ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">stepDefinitions.CommentsSD.verify_response_body_of_users_with_data(java.lang.String)</td>
+              <td>6</td>
+              <td class="duration" data-value="230440200">230ms</td>
+              <td class="duration" data-value="38406700">038ms</td>
+              <td class="failed">50.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">stepDefinitions.PostsSD.setPostRequestBody(java.lang.String)</td>
+              <td>29</td>
+              <td class="duration" data-value="240197200">240ms</td>
+              <td class="duration" data-value="8282662">008ms</td>
+              <td class="failed">96.55%</td>
+            </tr>
+                      <tr>
+              <td class="location">stepDefinitions.PostsSD.verifyResponseSearchResult(java.lang.String)</td>
+              <td>8</td>
+              <td class="duration" data-value="27309800">027ms</td>
+              <td class="duration" data-value="3413725">003ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">stepDefinitions.PostsSD.verify_response_body_of_users_with_data(java.lang.String)</td>
+              <td>5</td>
+              <td class="duration" data-value="66198000">066ms</td>
+              <td class="duration" data-value="13239600">013ms</td>
+              <td class="failed">40.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">stepDefinitions.ReusableSD.access_the_endpoint(java.lang.String)</td>
+              <td>81</td>
+              <td class="duration" data-value="16039935400">16s 039ms</td>
+              <td class="duration" data-value="198023893">198ms</td>
+              <td class="failed">96.30%</td>
+            </tr>
+                      <tr>
+              <td class="location">stepDefinitions.ReusableSD.delete(java.lang.String)</td>
+              <td>18</td>
+              <td class="duration" data-value="3953956100">3s 953ms</td>
+              <td class="duration" data-value="219664227">219ms</td>
+              <td class="failed">83.33%</td>
+            </tr>
+                      <tr>
+              <td class="location">stepDefinitions.ReusableSD.i_access_the_URL(java.lang.String)</td>
+              <td>168</td>
+              <td class="duration" data-value="783574200">783ms</td>
+              <td class="duration" data-value="4664132">004ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">stepDefinitions.ReusableSD.patch(java.lang.String)</td>
+              <td>30</td>
+              <td class="duration" data-value="5312466700">5s 312ms</td>
+              <td class="duration" data-value="177082223">177ms</td>
+              <td class="failed">90.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">stepDefinitions.ReusableSD.post(java.lang.String)</td>
+              <td>26</td>
+              <td class="duration" data-value="7378305000">7s 378ms</td>
+              <td class="duration" data-value="283780961">283ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">stepDefinitions.ReusableSD.put(java.lang.String)</td>
+              <td>27</td>
+              <td class="duration" data-value="3121932900">3s 121ms</td>
+              <td class="duration" data-value="115627144">115ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">stepDefinitions.ReusableSD.set_the_headers_as(java.lang.String)</td>
+              <td>168</td>
+              <td class="duration" data-value="140967700">140ms</td>
+              <td class="duration" data-value="839093">000ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">stepDefinitions.ReusableSD.set_the_parameters_as(java.lang.String)</td>
+              <td>3</td>
+              <td class="duration" data-value="2895500">002ms</td>
+              <td class="duration" data-value="965166">000ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">stepDefinitions.ReusableSD.set_the_parameters_asString(java.lang.String)</td>
+              <td>37</td>
+              <td class="duration" data-value="68334600">068ms</td>
+              <td class="duration" data-value="1846881">001ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">stepDefinitions.ReusableSD.validateCollectionEndPointSchema(java.lang.String)</td>
+              <td>8</td>
+              <td class="duration" data-value="127807000">127ms</td>
+              <td class="duration" data-value="15975875">015ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">stepDefinitions.ReusableSD.validateEndPointSchema(java.lang.String)</td>
+              <td>18</td>
+              <td class="duration" data-value="531308900">531ms</td>
+              <td class="duration" data-value="29517161">029ms</td>
+              <td class="failed">66.67%</td>
+            </tr>
+                      <tr>
+              <td class="location">stepDefinitions.ReusableSD.verify_id_is_not_available_in_response(java.lang.String)</td>
+              <td>6</td>
+              <td class="duration" data-value="13655100">013ms</td>
+              <td class="duration" data-value="2275850">002ms</td>
+              <td class="failed">50.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">stepDefinitions.ReusableSD.verify_the_status_code_is(java.lang.Integer)</td>
+              <td>144</td>
+              <td class="duration" data-value="43654200">043ms</td>
+              <td class="duration" data-value="303154">000ms</td>
+              <td class="failed">47.22%</td>
+            </tr>
+                      <tr>
+              <td class="location">stepDefinitions.ReusableSD.verify_the_status_text_is(java.lang.String)</td>
+              <td>97</td>
+              <td class="duration" data-value="16531100">016ms</td>
+              <td class="duration" data-value="170423">000ms</td>
+              <td class="failed">37.11%</td>
+            </tr>
+                      <tr>
+              <td class="location">stepDefinitions.ReusableSD.veriifyResponseHeaders(java.lang.String)</td>
+              <td>9</td>
+              <td class="duration" data-value="2910800">002ms</td>
+              <td class="duration" data-value="323422">000ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">stepDefinitions.UsersSD.setUserRequstBody(java.lang.String)</td>
+              <td>27</td>
+              <td class="duration" data-value="149012200">149ms</td>
+              <td class="duration" data-value="5518970">005ms</td>
+              <td class="failed">92.59%</td>
+            </tr>
+                      <tr>
+              <td class="location">stepDefinitions.UsersSD.verifyResponseSearchResult(java.lang.String)</td>
+              <td>5</td>
+              <td class="duration" data-value="17579700">017ms</td>
+              <td class="duration" data-value="3515940">003ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">stepDefinitions.UsersSD.verify_response_body_of_users_with_data(java.lang.String)</td>
+              <td>7</td>
+              <td class="duration" data-value="1989360000">1s 989ms</td>
+              <td class="duration" data-value="284194285">284ms</td>
+              <td class="failed">57.14%</td>
+            </tr>
+                  </tbody>
+
+        <tfoot class="total">
+          <tr>
+            <td>26</td>
+            <td>1300</td>
+            <td class="duration">40s 592ms</td>
+            <td class="duration">031ms</td>
+            <td>Totals</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>

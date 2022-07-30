@@ -1,0 +1,118 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "array",
+	"title": "The users collection schema",
+	"description": "Contains Users collection endpoint json schema",
+	"items": {
+		"type": "object",
+		"title": "The users schema",
+		"description": "Contains Users endpoint json schema",
+		"properties": {
+			"id": {
+				"type": "integer"
+			},
+			"name": {
+				"type": "string",
+				"maxLength": 30,
+				"minLength": 1
+			},
+			"username": {
+				"type": "string"
+			},
+			"email": {
+				"type": "string",
+				"pattern": "^[A-Z._0-9a-z]+@{1}[A-Za-z]+.{1}[a-z]+$"
+			},
+			"address": {
+				"type": "object",
+				"$ref": "#/items/definitions/address"
+			},
+			"phone": {
+				"type": "string"
+			},
+			"website": {
+				"type": "string"
+			},
+			"company": {
+				"type": "object",
+				"$ref": "#/items/definitions/company"
+			}
+		},
+		"required": [
+			"id",
+			"name",
+			"username",
+			"email",
+			"address",
+			"phone",
+			"website",
+			"company"
+		],
+		"definitions": {
+			"address": {
+				"type": "object",
+				"additionalProperties": false,
+				"properties": {
+					"street": {
+						"type": "string"
+					},
+					"suite": {
+						"type": "string"
+					},
+					"city": {
+						"type": "string"
+					},
+					"zipcode": {
+						"type": "string"
+					},
+					"geo": {
+						"$ref": "#/items/definitions/geo"
+					}
+				},
+				"required": [
+					"street",
+					"suite",
+					"city",
+					"zipcode",
+					"geo"
+				]
+			},
+			"geo": {
+				"type": "object",
+				"additionalProperties": false,
+				"properties": {
+					"lat": {
+						"type": "string"
+					},
+					"lng": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"lat",
+					"lng"
+				]
+			},
+			"company": {
+				"type": "object",
+				"additionalProperties": false,
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"catchPhrase": {
+						"type": "string"
+					},
+					"bs": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"name",
+					"catchPhrase",
+					"bs"
+				]
+			}
+		}
+	}
+}
